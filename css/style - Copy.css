@@ -1,0 +1,144 @@
+@charset "utf8";
+.container{
+    height: 80px;
+}
+body {
+    background-size: cover;
+    font-family: arial;
+}
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+.logo {
+    width: 200px;
+    height: 100px;
+}
+
+.navbar {
+     position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1030;
+}
+#navbarSupportedContent a {
+    font-size: 20px;
+    color: #000080 !important;
+}
+
+#navbarSupportedContent a:hover {
+    background-color: #000080;
+    color: white !important;
+}
+
+#head {
+    width: 100%;
+    background-size: cover;
+    z-index: 1;
+    margin-top: 0;
+}
+#head img {
+    width: 100%;
+    height: 500px;
+}
+
+.fixed-background {
+    background-attachment: fixed;
+}
+
+.login {
+    margin-top: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 15px;
+}
+
+.login a {
+    color: #000080;
+    text-decoration: none;
+    margin-left: 15px;
+}
+.login a:hover {
+    text-decoration: underline;
+}
+
+#main {
+    margin: 40px;
+}
+
+#footer {
+    background-color: white;
+    color: black;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    flex: 1;
+    margin-bottom: 20px;
+}
+
+.footer-section h3 {
+    margin-bottom: 15px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px; 
+}
+
+.footer-section ul li a {
+    color: black; 
+    text-decoration: none;
+}
+
+
+/* Thiết lập giao diện cho máy tính xách tay (Laptop) */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    /* Thêm CSS cho máy tính xách tay */
+    /* Ví dụ */
+    .container {
+        width: 992px;
+        margin: 0 auto;
+    }
+}
+
+/* Thiết lập giao diện cho máy tính bảng (Tablet) */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    /* Thêm CSS cho máy tính bảng */
+    /* Ví dụ */
+    .container {
+        width: 100%;
+        padding: 0 20px;
+    }
+}
+
+/* Thiết lập giao diện cho điện thoại di động (Mobile) */
+@media only screen and (max-width: 767px) {
+    /* Thêm CSS cho điện thoại di động */
+    /* Ví dụ */
+    .container {
+        width: 100%;
+        padding: 0 10px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .formm {
+      position: relative;
+      top: 50px; /* Điều chỉnh khoảng cách từ đỉnh của màn hình xuống form */
+    }
+  }
+  

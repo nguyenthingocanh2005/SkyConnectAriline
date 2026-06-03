@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang chủ</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+    <link rel="icon" href="images/logo.png" type="image/x-icon">
+
+    <style>
+        #mn {
+            width: 100%;
+        }
+        #head {
+            position: relative;
+        }
+        #form_wrapper {
+            position: absolute;
+            top: 150px;
+            right: 120px;
+            max-width: 500px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #f8f9fa;
+            z-index: 2;
+        }
+
+        .form-control, .form-select {
+            width: 100%;
+        }
+
+        .container-fluid {
+            position: relative;
+            z-index: 1;
+        }
+
+        .image-grid {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .image-grid-item {
+            position: relative;
+            overflow: hidden;
+            margin: 10px;
+            flex: 1 1 calc(50% - 20px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .image-grid-item img {
+            width: 100%;
+            height: 400px;
+            display: block;
+            border-radius: 10px;
+        }
+
+        .image-text {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            text-align: center;
+            font-size: 1.2em;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
+        .image-description {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+            background: rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            transition: opacity 0.3s;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .image-grid-item:hover .image-description {
+            opacity: 1;
+        }
+
+        @media (max-width: 1200px) {
+            #form_wrapper {
+                right: 50px;
+                max-width: 400px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            #form_wrapper {
+                right: 30px;
+                max-width: 300px;
+            }
+
+            .image-grid-item img {
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            #form_wrapper {
+                position: relative;
+                right: 0;
+                top: 0;
+                max-width: 100%;
+                margin-bottom: 20px;
+            }
+
+            .image-grid-item {
+                flex: 1 1 calc(100% - 20px);
+            }
+
+            .image-grid-item img {
+                height: 200px;
+            }
+        }
+
+           .marquee {
+        width: 100%;
+        overflow: hidden;
+        white-space: nowrap;
+        position: relative;
+    }
+
+    .marquee-content {
+        display: inline-block;
+        position: absolute;
+        animation: marquee 10s linear infinite;
+    }
+
+    @keyframes marquee {
+        0% { transform: translateX(100%); }
+        100% { transform: translateX(-100%); }
+    }
+
+    .card {
+        height: 500px;
+    }
+    </style>    
+</head>
+<body style="background-image: url('images/bg.jpg');">
+    <div id="header"></div>
+
+    <div id="head">
+        <div id="demo" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+            </div>
+
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="images/head.jpg" alt="Los Angeles" class="d-block" style="width:100%">
+                    <div class="carousel-caption">
+                        <h4>“Chuyến bay có thể không là tất cả thuyền buồm sơ sài, nhưng niềm vui của nó là giá trị đáng giá.”</h4>
+                        <p> -Amelia Earhart-</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="images/head1.jpg" alt="Chicago" class="d-block" style="width:100%">
+                    <div class="carousel-caption">
+                        <h4> “Du lịch hàng không là cách tự nhiên của việc khiến bạn trông như tấm ảnh hộ chiếu của bạn.”</h4>
+                        <p>-AI Gore-</p>
+                    </div> 
+                </div>
+                <div class="carousel-item">
+                    <img src="images/head2.jpg" alt="New York" class="d-block" style="width:100%">
+                    <div class="carousel-caption">
+                        <h4>“Việc bay? Tôi không lo về nó. Tôi an toàn trên đây. Tôi cảm giác rất thoải mái với khả năng bay máy bay của tôi.”</h4>
+                        <p>-Cory Lidle-</p>
+                    </div>  
+                </div>
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+
+        <div class="container mt-3">
+            <div id="form_wrapper">
+                <div class="btn-group" id="mn">
+                    <button type="button" class="btn btn-primary">Đặt vé</button>
+                    <button type="button" class="btn btn-primary">Kiểm tra đơn hàng</button>
+                </div>
+
+                <div id="form" class="mt-4">
+                    <div class="row">
+                        <div class="col-md-6 col-custom">
+                            <label for="diem-di">Điểm đi</label>
+                            <select class="form-select form-select-sm" id="diem-di">
+                                <option value="0">-- Chọn điểm đi --</option>
+
+                                <option value="HAN">Hà Nội (HAN)</option>
+                                <option value="SGN">Hồ Chí Minh (SGN)</option>
+                                <option value="DAD">Đà Nẵng (DAD)</option>
+                                <option value="CXR">Nha Trang (CXR)</option>
+                                <option value="PQC">Phú Quốc (PQC)</option>
+                                <option value="HUI">Huế (HUI)</option>
+                                <option value="VCA">Cần Thơ (VCA)</option>
+                                <option value="HPH">Hải Phòng (HPH)</option>
+                                <option value="VII">Vinh (VII)</option>
+                                <option value="THD">Thanh Hóa (THD)</option>
+                                <option value="VDH">Đồng Hới (VDH)</option>
+                                <option value="BMV">Buôn Ma Thuột (BMV)</option>
+                                <option value="PXU">Pleiku (PXU)</option>
+                                <option value="DLI">Đà Lạt (DLI)</option>
+                                <option value="UIH">Quy Nhơn (UIH)</option>
+                                <option value="TBB">Tuy Hòa (TBB)</option>
+                                <option value="VCL">Chu Lai (VCL)</option>
+                                <option value="CAH">Cà Mau (CAH)</option>
+                                <option value="VCS">Côn Đảo (VCS)</option>
+                                <option value="DIN">Điện Biên (DIN)</option>
+                                <option value="VVH">Quảng Ninh / Vân Đồn (VVH)</option>
+                                <option value="NHA">Nha Trang Cam Ranh phụ (NHA)</option>
+                                <option value="SQH">Sơn La / Na Sản (SQH)</option>
+                                <option value="VDO">Vân Đồn (VDO)</option>
+                                <option value="LSQ">Lào Cai / Sa Pa gần nhất (LSQ)</option>
+                                <option value="BBM">Điện Biên phụ (BBM)</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 col-custom">
+                            <label for="diem-den">Điểm đến</label>
+                            <select class="form-select form-select-sm" id="diem-den">
+                                <option value="0">-- Chọn điểm đến --</option>
+
+                                <option value="HAN">Hà Nội (HAN)</option>
+                                <option value="SGN">Hồ Chí Minh (SGN)</option>
+                                <option value="DAD">Đà Nẵng (DAD)</option>
+                                <option value="CXR">Nha Trang (CXR)</option>
+                                <option value="PQC">Phú Quốc (PQC)</option>
+                                <option value="HUI">Huế (HUI)</option>
+                                <option value="VCA">Cần Thơ (VCA)</option>
+                                <option value="HPH">Hải Phòng (HPH)</option>
+                                <option value="VII">Vinh (VII)</option>
+                                <option value="THD">Thanh Hóa (THD)</option>
+                                <option value="VDH">Đồng Hới (VDH)</option>
+                                <option value="BMV">Buôn Ma Thuột (BMV)</option>
+                                <option value="PXU">Pleiku (PXU)</option>
+                                <option value="DLI">Đà Lạt (DLI)</option>
+                                <option value="UIH">Quy Nhơn (UIH)</option>
+                                <option value="TBB">Tuy Hòa (TBB)</option>
+                                <option value="VCL">Chu Lai (VCL)</option>
+                                <option value="CAH">Cà Mau (CAH)</option>
+                                <option value="VCS">Côn Đảo (VCS)</option>
+                                <option value="DIN">Điện Biên (DIN)</option>
+                                <option value="VVH">Quảng Ninh / Vân Đồn (VVH)</option>
+                                <option value="NHA">Nha Trang Cam Ranh phụ (NHA)</option>
+                                <option value="SQH">Sơn La / Na Sản (SQH)</option>
+                                <option value="VDO">Vân Đồn (VDO)</option>
+                                <option value="LSQ">Lào Cai / Sa Pa gần nhất (LSQ)</option>
+                                <option value="BBM">Điện Biên phụ (BBM)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row mt-2">
+                        <div class="col-md-6 col-custom">
+                            <input type="radio" name="ve" value="mot_chieu"> Một chiều
+                        </div>
+                        <div class="col-md-6 col-custom">
+                            <input type="radio" name="ve" value="khu_hoi" checked> Khứ hồi
+                        </div>
+                    </div>
+
+                    <div class="row mt-2">
+                        <div class="col-md-6 col-custom">
+                            <label for="ngay_di">Ngày đi</label>
+                            <input type="date" id="ngay_di" class="form-control form-control-sm">
+                        </div>
+                        <div class="col-md-6 col-custom">
+                            <label for="ngay_ve">Ngày về</label>
+                            <input type="date" id="ngay_ve" class="form-control form-control-sm">
+                        </div>
+                    </div>
+
+                    <div class="row mt-2">
+                        <div class="col-md-4 col-custom">
+                            <label for="nguoi_lon">Người lớn</label>
+                            <select class="form-select form-select-sm" id="nguoi_lon">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4 col-custom">
+                            <label for="tre_em">Trẻ em</label>
+                            <select class="form-select form-select-sm" id="tre_em">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4 col-custom">
+                            <label for="em_be">Em bé</label>
+                            <select class="form-select form-select-sm" id="em_be">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-custom mt-2">
+                        <input 
+                            type="button"
+                            id="btnSearch"
+                            class="form-control form-control-sm"
+                            value="Tìm chuyến bay"
+                            style="background-color: yellow; color: brown; width: 200px;"
+                        >
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="main">
+        <div class="container mt-4">
+        <h3 class="mb-3">Thông tin chuyến bay</h3>
+
+        <div class="row">
+            <!-- Cột trái -->
+            <div class="col-md-6">
+                <table class="table table-bordered table-striped">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Flight</th>
+                            <th>Điểm đi</th>
+                            <th>Điểm đến</th>
+                            <th>Ngày</th>
+                            <th>Giờ</th>
+                        </tr>
+                    </thead>
+                    <tbody id="leftTable"></tbody>
+                </table>
+            </div>
+
+            <!-- Cột phải -->
+            <div class="col-md-6">
+                <table class="table table-bordered table-striped">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Flight</th>
+                            <th>Điểm đi</th>
+                            <th>Điểm đến</th>
+                            <th>Ngày</th>
+                            <th>Giờ</th>
+                        </tr>
+                    </thead>
+                    <tbody id="rightTable"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="text-center mt-3">
+            <button class="btn btn-primary" onclick="prevPage()">← Trước</button>
+            <span class="mx-3" id="pageInfo"></span>
+            <button class="btn btn-primary" onclick="nextPage()">Sau →</button>
+        </div>
+    </div> <!-- đóng container chuyến bay -->
+
+        <div class="container mt-5">
+            <h2>Địa điểm nổi bật</h2>
+                <div class="row">
+                    <div class="image-grid">
+                        <div class="image-grid-item">
+                            <a href="Da-Nang.html">
+                                <img src="images/DN.jpg" alt="Đà Nẵng">
+                                <div class="image-text">Đà Nẵng</div>
+                                <div class="image-description">Đà Nẵng là thành phố biển xinh đẹp, nổi tiếng với các bãi biển tuyệt đẹp và danh lam thắng cảnh.</div>
+                            </a>
+                        </div>
+
+                        <div class="image-grid-item">
+                            <a href="Hue.html">
+                                <img src="images/Hue.jpg" alt="Huế">
+                                <div class="image-text">Huế</div>
+                                <div class="image-description">Huế là cố đô của Việt Nam, nổi tiếng với các di sản văn hóa và lịch sử.</div>
+                            </a>
+                        </div>
+
+                        <div class="image-grid-item">
+                            <a href="Vung-Tau.html">
+                                <img src="images/VT-bg.jpg" alt="Vũng Tàu">
+                                <div class="image-text">Vũng Tàu</div>
+                                <div class="image-description">Vũng Tàu là một trong hai thành phố thuộc tỉnh Bà Rịa – Vũng Tàu, là trung tâm kinh tế, văn hóa và du lịch quan trọng của vùng Đông Nam Bộ. </div>
+                            </a>
+                        </div>
+
+                        <div class="image-grid-item">
+                            <a href="Quang-Tri.html">
+                                <img src="images/QT.jpg" alt="Quảng Trị">
+                                <div class="image-text">Quảng Trị</div>
+                                <div class="image-description">Tỉnh Quảng Trị có nguồn tài nguyên du lịch tự nhiên phong phú, đa dạng trong đó phải kể đến những địa danh nổi tiếng đi vào lịch sử: đôi bờ Hiền Lương - Bến Hải, thành cổ Quảng Trị,...</div>
+                            </a>
+                        </div>
+
+                        <div class="image-grid-item">
+                            <a href="Phu-Quoc.html">
+                                <img src="images/PQ-bg.jpg" alt="Phú Quốc">
+                                <div class="image-text">Phú Quốc</div>
+                                <div class="image-description">Phú Quốc, hòn đảo lớn nhất trong quần đảo Việt Nam, được thân thương gọi là “Đảo Ngọc”.</div>
+                            </a>
+                        </div>
+
+                        <div class="image-grid-item">
+                            <a href="Thai-Binh.html">
+                                <img src="images/TB.jpg" alt="Thái Bình">
+                                <div class="image-text">Thái Bình</div>
+                                <div class="image-description">Thái Bình là một tỉnh ven biển ở Đồng bằng sông Hồng, tới Thái Bình bạn sẽ được khám phá những điểm du lịch hấp dẫn từ chùa chiền đến các bãi biển tuyệt đẹp; chẳng hạn như khung cảnh trời Âu tại nhà thờ Bác Trạch hay hòa mình với thiên nhiên ở bãi biển cồn Đen,...</div>
+                            </a>
+                        </div>
+
+                        <div class="image-grid-item">
+                            <a href="Bac-Ninh.html">
+                                <img src="images/BN.jpg" alt="Bắc Ninh">
+                                <div class="image-text">Bắc Ninh</div>
+                                <div class="image-description">Bắc Ninh là tọa độ vi vu nổi bật trong các điểm du lịch phía Bắc. Đặc biệt, nơi đây còn được mẹ thiên nhiên ưu ái với vô vàn cảnh sắc tuyệt đẹp cùng nhiều công trình kiến trúc cổ xưa.</div>
+                            </a>
+                        </div>
+
+                        <div class="image-grid-item">
+                            <a href="Da-Lat.html">
+                                <img src="images/DaLat.jpg" alt="Đà Lạt">
+                                <div class="image-text">Đà Lạt</div>
+                                <div class="image-description">Đà Lạt là thành phố mộng mơ, nổi tiếng với khí hậu mát mẻ và nhiều điểm tham quan đẹp.</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <div id="footer"></div>
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+    <script src="js/flights.js"></script>
+    <script type="module" src="js/auth.js"></script>
+    <script type="module" src="js/booking.js"></script>
+    <script src="js/navbar.js"></script>
+</body>
+</html>

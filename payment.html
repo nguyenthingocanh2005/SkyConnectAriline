@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Thanh toán</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+
+body{
+    background:#f5f7fa;
+}
+
+.box{
+    max-width:1000px;
+    margin:auto;
+    margin-top:40px;
+}
+
+.card-box{
+    background:white;
+    border-radius:18px;
+    padding:30px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.08);
+}
+
+.time{
+    font-size:32px;
+    font-weight:700;
+}
+
+.price{
+    color:#e53935;
+    font-size:36px;
+    font-weight:700;
+}
+
+.wallet-box{
+    background:#f1f3f5;
+    border-radius:12px;
+    padding:15px;
+    margin-top:20px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container box">
+
+    <div class="card-box">
+
+        <h2 class="mb-4">
+            💳 Thanh toán chuyến bay
+        </h2>
+
+        <!-- thông tin chuyến bay -->
+        <div class="row text-center mb-5">
+
+            <div class="col-md-5">
+
+                <div id="depAirport"></div>
+
+                <div class="time" id="depTime"></div>
+
+                <div id="depDate"></div>
+
+            </div>
+
+            <div class="col-md-2 d-flex align-items-center justify-content-center">
+
+                ✈️
+
+            </div>
+
+            <div class="col-md-5">
+
+                <div id="arrAirport"></div>
+
+                <div class="time" id="arrTime"></div>
+
+                <div id="arrDate"></div>
+
+            </div>
+
+        </div>
+
+        <!-- passenger -->
+        <div class="mb-4">
+
+            <h4>Thông tin hành khách</h4>
+
+            <div id="passengerInfo"></div>
+
+        </div>
+
+        <!-- total -->
+        <div class="mb-4">
+
+            <div class="price" id="totalPrice"></div>
+
+            <div id="ethPrice"></div>
+
+        </div>
+
+        <!-- metamask -->
+        <button
+            id="btnConnect"
+            class="btn btn-warning btn-lg w-100 mb-3"
+        >
+            Kết nối MetaMask
+        </button>
+
+        <div
+            id="walletAddress"
+            class="wallet-box"
+            style="display:none;"
+        ></div>
+
+        <!-- pay -->
+        <button
+            id="btnPay"
+            class="btn btn-primary btn-lg w-100"
+            style="display:none;"
+        >
+            Thanh toán bằng MetaMask
+        </button>
+
+    </div>
+
+</div>
+
+<!-- ethers -->
+<script src="https://cdn.jsdelivr.net/npm/ethers@6.13.1/dist/ethers.umd.min.js"></script>
+
+<script src="js/payment.js"></script>
+
+</body>
+</html>

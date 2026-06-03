@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Biên lai thanh toán</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+
+    background:
+    radial-gradient(circle at top left,#dbeafe 0%,transparent 28%),
+    radial-gradient(circle at top right,#bfdbfe 0%,transparent 25%),
+    #f8fafc;
+
+    min-height:100vh;
+
+    padding:40px 20px;
+
+    color:#0f172a;
+}
+
+.receipt-box{
+    max-width:1150px;
+    margin:auto;
+}
+
+/* ==========================
+   MAIN CARD
+========================== */
+
+.card-box{
+
+    background:
+    rgba(255,255,255,0.82);
+
+    backdrop-filter:blur(30px);
+
+    border-radius:40px;
+
+    overflow:hidden;
+
+    border:
+    1px solid rgba(255,255,255,0.7);
+
+    box-shadow:
+    0 30px 80px rgba(15,23,42,0.10);
+}
+
+/* ==========================
+   HEADER
+========================== */
+
+.top-success{
+
+    position:relative;
+
+    background:
+    linear-gradient(
+        135deg,
+        #2563eb 0%,
+        #3b82f6 45%,
+        #60a5fa 100%
+    );
+
+    padding:70px 40px 60px;
+
+    text-align:center;
+
+    color:white;
+
+    overflow:hidden;
+}
+
+.top-success::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:300px;
+    height:300px;
+
+    border-radius:50%;
+
+    background:
+    rgba(255,255,255,0.12);
+
+    top:-120px;
+    right:-100px;
+
+    filter:blur(20px);
+}
+
+.top-success::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:220px;
+    height:220px;
+
+    border-radius:50%;
+
+    background:
+    rgba(255,255,255,0.08);
+
+    bottom:-90px;
+    left:-50px;
+}
+
+.top-success h1{
+
+    font-size:46px;
+    font-weight:700;
+
+    letter-spacing:-1px;
+
+    margin-bottom:12px;
+
+    position:relative;
+    z-index:2;
+}
+
+.success-sub{
+
+    font-size:17px;
+
+    opacity:0.95;
+
+    position:relative;
+    z-index:2;
+}
+
+.booking-id{
+
+    margin-top:24px;
+
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+
+    background:
+    rgba(255,255,255,0.18);
+
+    border:
+    1px solid rgba(255,255,255,0.22);
+
+    padding:14px 26px;
+
+    border-radius:999px;
+
+    backdrop-filter:blur(16px);
+
+    font-weight:600;
+
+    font-size:17px;
+
+    position:relative;
+    z-index:2;
+}
+
+/* ==========================
+   SECTION
+========================== */
+
+.section{
+
+    padding:40px;
+
+    border-bottom:
+    1px solid #edf2f7;
+}
+
+.section:last-child{
+    border-bottom:none;
+}
+
+.section-title{
+
+    font-size:26px;
+
+    font-weight:700;
+
+    margin-bottom:28px;
+
+    color:#0f172a;
+}
+
+/* ==========================
+   STATUS
+========================== */
+
+.status{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:14px 24px;
+
+    border-radius:999px;
+
+    background:#ecfdf5;
+
+    border:
+    1px solid #d1fae5;
+
+    color:#059669;
+
+    font-weight:600;
+}
+
+.dot{
+
+    width:12px;
+    height:12px;
+
+    border-radius:50%;
+
+    background:#10b981;
+
+    box-shadow:
+    0 0 15px rgba(16,185,129,0.5);
+}
+
+/* ==========================
+   FLIGHT
+========================== */
+
+.airport{
+
+    font-size:26px;
+
+    font-weight:700;
+
+    color:#0f172a;
+}
+
+.flight-time{
+
+    font-size:52px;
+
+    font-weight:800;
+
+    color:#2563eb;
+
+    margin-top:8px;
+}
+
+.flight-date{
+
+    color:#64748b;
+
+    margin-top:10px;
+
+    font-size:15px;
+}
+
+.flight-center{
+
+    font-size:70px;
+
+    color:#2563eb;
+}
+
+.flight-line{
+
+    width:100%;
+
+    height:2px;
+
+    background:
+    repeating-linear-gradient(
+        to right,
+        #cbd5e1 0 12px,
+        transparent 12px 22px
+    );
+
+    margin:18px 0;
+}
+
+#duration{
+
+    color:#64748b;
+
+    font-weight:500;
+
+    font-size:15px;
+}
+
+/* ==========================
+   INFO CARD
+========================== */
+
+.info-card{
+
+    background:
+    linear-gradient(
+        180deg,
+        #ffffff,
+        #f8fafc
+    );
+
+    border:none;
+
+    border-radius:28px;
+
+    padding:24px;
+
+    height:100%;
+
+    box-shadow:
+    0 8px 28px rgba(15,23,42,0.05);
+
+    transition:0.3s;
+}
+
+.info-card:hover{
+
+    transform:
+    translateY(-6px);
+
+    box-shadow:
+    0 18px 40px rgba(15,23,42,0.08);
+}
+
+.label{
+
+    color:#64748b;
+
+    font-size:14px;
+
+    margin-bottom:8px;
+}
+
+.value{
+
+    font-size:17px;
+
+    font-weight:600;
+
+    color:#0f172a;
+
+    word-break:break-word;
+}
+
+.hash{
+    font-size:14px;
+}
+
+/* ==========================
+   PRICE
+========================== */
+
+.price{
+
+    font-size:62px;
+
+    font-weight:800;
+
+    background:
+    linear-gradient(
+        135deg,
+        #2563eb,
+        #06b6d4
+    );
+
+    background-clip:text;
+    -webkit-background-clip:text;
+
+    color:transparent;
+    -webkit-text-fill-color:transparent;
+}
+
+.eth{
+
+    font-size:20px;
+
+    color:#64748b;
+
+    margin-top:8px;
+}
+
+/* ==========================
+   QR
+========================== */
+
+.qr-box{
+
+    width:240px;
+    height:240px;
+
+    margin:auto;
+
+    background:white;
+
+    border-radius:32px;
+
+    border:
+    1px solid #e2e8f0;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    font-weight:600;
+
+    color:#334155;
+
+    box-shadow:
+    0 20px 45px rgba(0,0,0,0.08);
+
+    transition:0.3s;
+}
+
+.qr-box:hover{
+
+    transform:
+    scale(1.03);
+}
+
+/* ==========================
+   BUTTON
+========================== */
+
+.btn-custom{
+
+    border:none;
+
+    padding:20px;
+
+    border-radius:22px;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    transition:0.35s;
+}
+
+.btn-custom:hover{
+
+    transform:
+    translateY(-4px)
+    scale(1.01);
+}
+
+.btn-print{
+
+    background:
+    linear-gradient(
+        135deg,
+        #2563eb,
+        #3b82f6
+    );
+
+    color:white;
+
+    box-shadow:
+    0 12px 28px rgba(37,99,235,0.30);
+}
+
+.btn-history{
+
+    background:white;
+
+    border:
+    1px solid #dbe2ea;
+
+    color:#0f172a;
+
+    box-shadow:
+    0 8px 18px rgba(15,23,42,0.04);
+}
+
+.btn-history:hover{
+    background:#f8fafc;
+}
+
+/* ==========================
+   MOBILE
+========================== */
+
+@media(max-width:768px){
+
+    body{
+        padding:15px;
+    }
+
+    .card-box{
+        border-radius:28px;
+    }
+
+    .section{
+        padding:26px 20px;
+    }
+
+    .top-success{
+        padding:45px 20px;
+    }
+
+    .top-success h1{
+        font-size:32px;
+    }
+
+    .flight-time{
+        font-size:38px;
+    }
+
+    .flight-center{
+        font-size:55px;
+    }
+
+    .price{
+        font-size:44px;
+    }
+
+    .booking-id{
+        font-size:14px;
+    }
+
+    .qr-box{
+        width:200px;
+        height:200px;
+    }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="receipt-box">
+
+    <div class="card-box">
+
+        <!-- TOP -->
+        <div class="top-success">
+
+            <h1>
+                ✅ Thanh toán thành công
+            </h1>
+
+            <div class="success-sub">
+                Vé điện tử đã được tạo thành công
+            </div>
+
+            <div
+                class="booking-id"
+                id="bookingId"
+            ></div>
+
+        </div>
+
+        <!-- STATUS -->
+        <div class="section text-center">
+
+            <div class="status">
+
+                <div class="dot"></div>
+
+                Blockchain Transaction Confirmed
+
+            </div>
+
+        </div>
+
+        <!-- FLIGHT -->
+        <div class="section">
+
+            <div class="row align-items-center text-center">
+
+                <div class="col-md-4 mb-4 mb-md-0">
+
+                    <div
+                        class="airport"
+                        id="depAirport"
+                    ></div>
+
+                    <div
+                        class="flight-time"
+                        id="depTime"
+                    ></div>
+
+                    <div
+                        class="flight-date"
+                        id="depDate"
+                    ></div>
+
+                </div>
+
+                <div class="col-md-4 mb-4 mb-md-0">
+
+                    <div class="flight-center">
+                        ✈️
+                    </div>
+
+                    <div id="duration"></div>
+
+                </div>
+
+                <div class="col-md-4">
+
+                    <div
+                        class="airport"
+                        id="arrAirport"
+                    ></div>
+
+                    <div
+                        class="flight-time"
+                        id="arrTime"
+                    ></div>
+
+                    <div
+                        class="flight-date"
+                        id="arrDate"
+                    ></div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- PASSENGER -->
+        <div class="section">
+
+            <div class="section-title">
+                👤 Hành khách
+            </div>
+
+            <div class="row g-4">
+
+                <div class="col-md-6">
+
+                    <div class="info-card">
+
+                        <div class="label">
+                            Họ tên
+                        </div>
+
+                        <div
+                            class="value"
+                            id="fullname"
+                        ></div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-6">
+
+                    <div class="info-card">
+
+                        <div class="label">
+                            Số điện thoại
+                        </div>
+
+                        <div
+                            class="value"
+                            id="phone"
+                        ></div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-6">
+
+                    <div class="info-card">
+
+                        <div class="label">
+                            Email
+                        </div>
+
+                        <div
+                            class="value"
+                            id="email"
+                        ></div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-6">
+
+                    <div class="info-card">
+
+                        <div class="label">
+                            Số vé
+                        </div>
+
+                        <div
+                            class="value"
+                            id="ticketCount"
+                        ></div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- BLOCKCHAIN -->
+        <div class="section">
+
+            <div class="section-title">
+                ⛓️ Blockchain Payment
+            </div>
+
+            <div class="row g-4">
+
+                <div class="col-md-6">
+
+                    <div class="info-card">
+
+                        <div class="label">
+                            Wallet Address
+                        </div>
+
+                        <div
+                            class="value hash"
+                            id="wallet"
+                        ></div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-6">
+
+                    <div class="info-card">
+
+                        <div class="label">
+                            Transaction Hash
+                        </div>
+
+                        <div
+                            class="value hash"
+                            id="txHash"
+                        ></div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- PRICE -->
+        <div class="section text-center">
+
+            <div
+                class="price"
+                id="price"
+            ></div>
+
+            <div
+                class="eth"
+                id="ethPrice"
+            ></div>
+
+        </div>
+
+        <!-- QR -->
+        <div class="section text-center">
+
+            <div class="section-title">
+                🎫 Vé điện tử
+            </div>
+
+            <div
+                class="qr-box"
+                id="qrcode"
+            ></div>
+
+        </div>
+
+        <!-- BUTTON -->
+        <div class="section">
+
+            <div class="row g-3">
+
+                <div class="col-md-6">
+
+                    <button
+                        class="btn-custom btn-print w-100"
+                        onclick="window.print()"
+                    >
+                        🖨️ In vé
+                    </button>
+
+                </div>
+
+                <div class="col-md-6">
+
+                    <button
+                        class="btn-custom btn-history w-100"
+                        onclick="goHistory()"
+                    >
+                        📜 Lịch sử đặt vé
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="js/receipt.js"></script>
+
+</body>
+</html>

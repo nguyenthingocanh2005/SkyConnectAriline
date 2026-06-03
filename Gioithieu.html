@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giới thiệu</title>
+       
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+    <link rel="icon" href="images/logo.png" type="image/x-icon">
+
+    <style>
+        /* ==========================
+   GLOBAL
+========================== */
+
+*{
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#f4f8fc;
+    color:#1e293b;
+}
+
+/* ==========================
+   HERO
+========================== */
+
+#head{
+    position:relative;
+    background-size:cover;
+    background-position:center;
+    border-radius:0 0 40px 40px;
+    overflow:hidden;
+}
+
+#head::before{
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    background:
+    linear-gradient(
+        rgba(15,23,42,.45),
+        rgba(15,23,42,.55)
+    );
+}
+
+.hero-content{
+    position:absolute;
+    z-index:2;
+
+    top:50%;
+    left:50%;
+
+    transform:
+    translate(-50%,-50%);
+
+    text-align:center;
+    color:white;
+}
+
+.hero-content h1{
+    font-size:54px;
+    font-weight:700;
+}
+
+.hero-content p{
+    font-size:20px;
+    opacity:.95;
+}
+
+/* ==========================
+   CONTAINER
+========================== */
+
+.container-fluid{
+    padding:60px 6%;
+}
+
+/* ==========================
+   LEFT CONTENT
+========================== */
+
+.anh{
+    position:relative;
+    border-radius:28px;
+    overflow:hidden;
+
+    box-shadow:
+    0 20px 45px rgba(0,0,0,.08);
+
+    margin-bottom:35px;
+}
+
+.anh img{
+    width:100%;
+    height:500px;
+    object-fit:cover;
+}
+
+.tt{
+    position:absolute;
+
+    bottom:0;
+    left:0;
+    right:0;
+
+    padding:35px;
+
+    background:
+    linear-gradient(
+        transparent,
+        rgba(0,0,0,.75)
+    );
+
+    color:white;
+
+    font-size:32px;
+    font-weight:700;
+}
+
+.gioithieu{
+
+    background:white;
+
+    border-radius:24px;
+
+    padding:35px;
+
+    margin-bottom:28px;
+
+    box-shadow:
+    0 8px 25px rgba(15,23,42,.06);
+
+    line-height:1.9;
+}
+
+.gioithieu .h1{
+    font-size:28px !important;
+    font-weight:700;
+    color:#0f172a;
+
+    margin-bottom:20px;
+}
+
+/* ==========================
+   TABLE
+========================== */
+
+.gioithieu table{
+    width:100%;
+    border:none;
+}
+
+.gioithieu td{
+    border:1px solid #e2e8f0;
+    padding:18px;
+}
+
+.gioithieu tr:first-child td:first-child{
+    border-top-left-radius:14px;
+}
+
+.gioithieu tr:first-child td:last-child{
+    border-top-right-radius:14px;
+}
+
+.gioithieu tr:last-child td:first-child{
+    border-bottom-left-radius:14px;
+}
+
+.gioithieu tr:last-child td:last-child{
+    border-bottom-right-radius:14px;
+}
+
+.gioithieu td:first-child{
+    width:230px;
+    font-weight:600;
+    background:#f8fafc;
+}
+
+/* ==========================
+   ICON
+========================== */
+
+.icon2,
+.icon3{
+    color:#2563eb;
+    margin-right:8px;
+}
+
+/* ==========================
+   SEARCH FORM
+========================== */
+
+.flight-search-form{
+
+    position:sticky;
+    top:120px;
+
+    background:white;
+
+    border-radius:30px;
+
+    padding:35px;
+
+    box-shadow:
+    0 25px 50px rgba(15,23,42,.08);
+
+    margin-top:100px;
+}
+
+.mau{
+    text-align:center;
+    margin-bottom:25px;
+}
+
+.mau h2{
+    font-weight:700;
+    color:#2563eb;
+}
+
+.form-group{
+    margin-bottom:18px;
+}
+
+.form-control{
+
+    border-radius:14px;
+    border:1px solid #dbe2ea;
+
+    padding:14px 18px;
+
+    height:54px;
+}
+
+.form-control:focus{
+
+    border-color:#2563eb;
+
+    box-shadow:
+    0 0 0 4px rgba(37,99,235,.12);
+}
+
+.btn-primary{
+
+    width:100%;
+    border:none;
+
+    border-radius:16px;
+
+    height:56px;
+
+    font-size:18px;
+    font-weight:600;
+
+    background:
+    linear-gradient(
+        135deg,
+        #2563eb,
+        #3b82f6
+    );
+}
+
+.btn-primary:hover{
+    transform:translateY(-2px);
+}
+
+/* ==========================
+   LINKS
+========================== */
+
+a{
+    text-decoration:none;
+    color:#2563eb;
+}
+
+a:hover{
+    color:#1d4ed8;
+}
+
+/* ==========================
+   MOBILE
+========================== */
+
+@media(max-width:768px){
+
+    #head{
+        height:350px !important;
+    }
+
+    .hero-content h1{
+        font-size:34px;
+    }
+
+    .tt{
+        font-size:24px;
+    }
+
+    .flight-search-form{
+        margin-top:40px;
+        position:static;
+    }
+
+    .container-fluid{
+        padding:30px 20px;
+    }
+}
+    </style>
+
+</head>
+<body style="background-image: url('images/bg.jpg');">
+    <div id="header"></div>
+
+    <div id="head"
+style="background-image:url('images/gt.jpg'); height:630px;">
+
+    <div class="hero-content">
+        <h1>SKY CONNECTED AIRLINE</h1>
+        <p>
+            Tận hưởng trải nghiệm bay an toàn,
+            hiện đại và đẳng cấp
+        </p>
+    </div>
+
+</div>
+
+    <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-8" style="margin-top: 100px;">
+        <div class="anh">
+          <div class="gt">
+              <img src="images/gt.jpg"
+                class="img-fluid"
+                alt="">
+          </div>
+          <div class="tt">
+              Tận hưởng trải nghiệm bay hoàn hảo cùng SKY CONNECTED
+               AIRLINE!
+          </div>
+        </div>
+          <div class="gioithieu">
+              <div class="h1" style="font-size: 27px;">Chào mừng đến với Hãng hàng không sky connected airline:</div>
+              SCA - Đối tác lựa chọn hàng đầu của bạn cho mọi hành trình. Với hơn 20 năm kinh nghiệm trong ngành hàng không, 
+              chúng tôi tự hào là một trong những hãng hàng không hàng đầu trên thế giới, mang lại cho khách hàng trải nghiệm bay an toàn, thoải mái và đầy hứng khởi.
+          </div>
+          <div class="gioithieu">
+              <table border="1" style="border-collapse: collapse; height: 200px; width: 100%;">
+                  <tr>
+                      <td> <i class="icon3 fa fa-building" aria-hidden="true"></i> Công ty</td>
+                      <td>Công ty Cổ phần Dịch vụ Việt Liên Kết</td>
+                  </tr>
+                  <tr>
+                      <td> <i class="icon3 fa fa-location-arrow" aria-hidden="true"></i> Địa chỉ</td>
+                      <td>06 Phan Chu Trinh, P Tân Thành, Q Tân Phú, TPHCM</td>
+                  </tr>
+                  <tr>
+                      <td> <i class="icon3 fa fa-file" aria-hidden="true"></i> ĐKKD</td>
+                      <td>MST: 0309586118 Cấp ngày: 14/11/2009.<a href="https://i.pinimg.com/736x/18/e5/96/18e59666a4c3348e5a36b2e8889e1cdd.jpg">Giấy chứng nhận ĐKKD</a></td>
+                  </tr>
+                  <tr>
+                      <td> <i class="icon3 fa fa-paper-plane" aria-hidden="true"></i> Nhãn hiệu</td>
+                      <td>SCA.<a href="https://i.pinimg.com/474x/46/03/69/460369516d71d50fa3dd43a0c1ef9c4b.jpg">Giấy chứng nhận nhãn hiệu</a></td>
+                  </tr>
+                  <tr>
+                      <td> <i class="icon3 fa fa-phone" aria-hidden="true"></i> Điện thoại</td>
+                      <td>0362.711.672</td>
+                  </tr>
+                  <tr>
+                      <td> <i class="icon3 fa fa-envelope" aria-hidden="true"></i> Email</td>
+                      <td>hungnh.23it@vku.udn.vn</td>
+                  </tr>
+                  <tr>
+                      <td> <i class="icon3 fa fa-globe" aria-hidden="true"></i> Website</td>
+                      <td>https://SCA.vn</td>
+                  </tr>
+              </table>
+          </div>
+          <div class="gioithieu">
+              <div class="h1" style="font-size: 27px;"><i class="icon2 fa fa-lock" aria-hidden="true"></i> An toàn là ưu tiên hàng đầu:</div>
+              An toàn luôn là ưu tiên số một của SCA. Chúng tôi hiểu rằng, khi lựa chọn bay cùng chúng tôi, 
+              hành khách đặt trọn niềm tin vào sự an toàn của hãng. Để đáp lại niềm tin đó, chúng tôi không ngừng nỗ lực và đầu tư vào các biện pháp an toàn hàng không hiện đại và toàn diện nhất. 
+              Dưới đây là những cam kết và hoạt động của chúng tôi trong việc đảm bảo an toàn tuyệt đối cho mọi chuyến bay.
+          </div>
+          <div class="gioithieu">
+              <div class="h1" style="font-size: 27px;"><img src="images/logo-usd.png" style="width: 30px; color: black; margin-bottom: 8px;"> Giá Cả Hợp Lý:</div>
+              
+              SCA cam kết mang đến giá cả hợp lý và cạnh tranh cho mọi hành khách. 
+              Chúng tôi cung cấp nhiều loại vé phù hợp với nhu cầu và ngân sách khác nhau, 
+              từ hạng phổ thông đến hạng thương gia. Ngoài ra, SCA thường xuyên triển khai các chương trình khuyến mãi,
+               ưu đãi hấp dẫn và gói dịch vụ tiết kiệm để mang lại lợi ích tối đa cho khách hàng. Với chính sách hoàn vé và đổi vé linh hoạt, cùng chương trình khách hàng thân thiết, 
+              chúng tôi luôn nỗ lực đảm bảo mỗi chuyến bay không chỉ chất lượng mà còn mang lại giá trị 
+              cao nhất cho mỗi đồng tiền mà khách hàng chi trả.
+          </div>
+          <div class="gioithieu">
+              <div class="h1" style="font-size: 27px;"><img src="images/plane.png" style="width: 30px; color: black; margin-bottom: 8px;"> Mạng lưới bay rộng khắp:</div>
+              SCA cung cấp mạng lưới đường bay rộng khắp, 
+              bao gồm các chuyến bay nội địa đến các thành phố lớn như Hà Nội, Hồ Chí Minh, 
+              Đà Nẵng, và các chuyến bay quốc tế đến các điểm đến hấp dẫn trên khắp thế giới. 
+              Chúng tôi liên tục mở rộng và cập nhật mạng lưới đường bay để phục vụ tốt nhất nhu cầu di chuyển của khách hàng. 
+              Mỗi tuyến bay đều được lên kế hoạch kỹ lưỡng để đảm bảo hành trình nhanh chóng, thuận tiện và thoải mái nhất.
+          </div>
+          <div class="gioithieu">
+              <div class="h1" style="font-size: 27px;"><i class="icon2 fa fa-user-circle" aria-hidden="true"></i> Dịch vụ hàng không chất lượng:</div>
+              Chúng tôi hiểu rằng mỗi chuyến đi là một trải nghiệm quan trọng. 
+              Đội ngũ nhân viên chuyên nghiệp và tận tâm của chúng tôi luôn sẵn sàng hỗ trợ và mang đến sự hài lòng cao nhất cho hành khách. 
+              Các dịch vụ đặc biệt như phòng chờ hạng thương gia, dịch vụ ẩm thực trên máy bay, và các tiện ích giải trí phong phú luôn được chúng tôi chú trọng phát triển. Bên cạnh đó, chúng tôi cũng cung cấp các dịch vụ hỗ trợ đặc biệt cho trẻ em, 
+              người già và người khuyết tật, đảm bảo mọi hành khách đều nhận được sự chăm sóc chu đáo nhất.
+          </div>
+          <div class="gioithieu">
+              <div class="h1" style="font-size: 27px;"><i class="icon2 fa fa-bars" aria-hidden="true"></i> Tiện ích và ưu đãi đặc biệt:</div>
+              SCA mang đến nhiều tiện ích và ưu đãi đặc biệt nhằm nâng cao trải nghiệm bay của hành khách. 
+              Chúng tôi cung cấp phòng chờ hạng thương gia sang trọng, dịch vụ ẩm thực cao cấp, hệ thống giải trí đa dạng, 
+              và chính sách hành lý ưu đãi. Chương trình khách hàng thân thiết của chúng tôi giúp tích điểm đổi vé miễn phí và nâng hạng ghế. 
+              Ngoài ra, chúng tôi thường xuyên có các chương trình khuyến mãi hấp dẫn và dịch vụ hỗ trợ đặc biệt cho trẻ em, người cao tuổi, 
+              và người khuyết tật, đảm bảo mọi hành khách đều có trải nghiệm bay tuyệt vời.
+          </div>
+          <div class="gioithieu">
+              <div class="h1" style="font-size: 27px;"><i class="icon2 fa fa-fighter-jet" aria-hidden="true"></i> Hãy bay cùng SKY CONNECTED AIRLINE</div>
+              SCA không chỉ chú trọng đến kinh doanh mà còn đặc biệt quan tâm đến trách nhiệm xã hội. 
+              Chúng tôi tham gia và hỗ trợ nhiều chương trình từ thiện, các hoạt động bảo vệ môi trường và đóng góp vào sự phát triển của cộng đồng. 
+              Những chương trình này không chỉ giúp cải thiện đời sống của những người cần giúp đỡ mà còn thể hiện trách nhiệm và sự cam kết của chúng tôi đối với xã hội.<br>
+              Hãy để SCA đồng hành cùng bạn trên mọi chặng đường. Đặt vé dễ dàng qua website chính thức hoặc ứng dụng di động của chúng tôi. Theo dõi chúng tôi trên các mạng xã hội để cập nhật những thông tin mới nhất về các chương trình khuyến mãi và tin tức hàng không. 
+              Chúng tôi luôn lắng nghe và trân trọng mọi phản hồi của khách hàng để không ngừng hoàn thiện và nâng cao chất lượng dịch vụ.
+          </div>
+          <div class="gioithieu" style="padding-bottom: 70px;">
+              Có thế bạn quan tâm<br>
+              - <a href="https://khanhkhiem.com/wp-content/uploads/2022/10/meme-meo-bua.jpg" class="end">Dịch Vụ Khách Hàng Của SCA: Cam Kết Chất Lượng và Sự Hài Lòng</a><br>
+              - <a href="https://i.pinimg.com/736x/a7/ca/a7/a7caa775f9bdb2037aa87ebde725e2fd.jpg" class="end">Nhận xét và đánh giá của khách hàng về SCA</a><br>
+              - <a href="https://i.pinimg.com/236x/74/80/8c/74808c2c44a34b47ad36864cb8b1fe41.jpg" class="end">Thông tin liên hệ đại lý vé máy bay SCA</a><br>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="flight-search-form">
+            <div class="mau">
+            <h2 class="text-center">Tìm kiếm chuyến bay</h2>
+            </div>
+            <form>
+                <div class="form-group">
+                    <label for="from">Từ</label>
+                    <input type="text" class="form-control" id="from" placeholder="Nhập điểm khởi hành">
+                </div>
+                <div class="form-group">
+                    <label for="to">Đến</label>
+                    <input type="text" class="form-control" id="to" placeholder="Nhập điểm đến">
+                </div>
+                <div class="form-group">
+                    <label for="departure-date">Ngày khởi hành</label>
+                    <input type="date" class="form-control" id="departure-date">
+                </div>
+                <div class="form-group">
+                    <label for="return-date">Ngày trở về</label>
+                    <input type="date" class="form-control" id="return-date">
+                </div>
+                <div class="form-group">
+                    <label for="adults">Người lớn</label>
+                    <select class="form-control" id="adults">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="children">Trẻ em</label>
+                    <select class="form-control" id="children">
+                        <option>0</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="class">Hạng ghế</label>
+                    <select class="form-control" id="class">
+                        <option>Phổ thông</option>
+                        <option>Thương gia</option>
+                        <option>Hạng nhất</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Tìm kiếm</button>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div id="footer"></div>
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+
+    <script type="module" src="js/auth.js"></script>
+    <script src="js/navbar.js"></script>
+</body>
+</html>

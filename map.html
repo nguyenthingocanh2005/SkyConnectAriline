@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+    <link rel="icon" href="images/logo.png" type="image/x-icon">
+    <style>
+        .responsive-map {
+            max-width: 100%;
+            height: 700px;
+        }
+    </style>
+</head>
+<body style="background-image: url('images/bg.jpg');">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container px-5">
+            <div>
+                <div>
+                    <div id="dateDisplay"></div>
+                    <div class="marquee">
+                        <div class="marquee-content"></div>
+                    </div>
+                    <script>
+                        function updateDate() {
+                            var currentDate = new Date();
+                            var options = { month: 'long', day: 'numeric', year: 'numeric' };
+                            var dateString = "Site of the Day - " + currentDate.toLocaleDateString('en-US', options);
+                            document.getElementById('dateDisplay').innerText = dateString;
+                        }
+                        updateDate();
+                        setInterval(updateDate, 1000);
+                    </script>
+                </div>
+                <div id="logo">
+                    <a class="navbar-brand" href="#!"><img src="images/logo.png" class="logo"></a>
+                </div>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="Home.html">TRANG CHỦ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Gioithieu.html">GIỚI THIỆU</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Hotro.html">HỖ TRỢ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Lienhe.html">LIÊN HỆ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Tintuc.html">TIN TỨC</a></li>
+                </ul>
+            </div>
+            <div class="nav-item login ms-2">
+                <a class="nav-link" href="Dangnhap.html">Đăng nhập</a>
+                <a class="nav-link" href="Dangky.html">Đăng ký</a>
+            </div>
+        </div>
+    </nav>
+
+    <div id="head" style="background-image: url('images/lienhe.jpg'); height: 630px;"></div>
+
+    <div id="main" class="container py-5">
+        <div class="row gx-5">
+            <div class="col-lg-6 mb-5" align="center">
+                <h2 class="fw-bolder">Thông tin liên hệ</h2>
+                <p>Điện thoại: 0815078007</p>
+                <p>Email: nhathm.23it@vku.udn.vn</p>
+                <img src="images/maybay-lienhe.jpg" width="530px" height="300px">
+            </div>
+            <div class="col-lg-6 mb-5">
+                <h2 class="fw-bolder">Gửi liên hệ</h2>
+                <form name="lienhe" method="post" onsubmit="return kiemtra()">
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Tên của bạn">
+                        <label for="name">Tên của bạn</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
+                        <label for="email">Email</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="tel" class="form-control" id="phone" name="phone" placeholder="0123456789">
+                        <label for="phone">Số điện thoại</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <textarea class="form-control" id="message" name="message" placeholder="Nội dung" style="height: 150px;"></textarea>
+                        <label for="message">Nội dung</label>
+                    </div>
+                    <div class="d-grid">
+                        <button class="btn btn-primary btn-lg" type="submit">Gửi</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <img src="images/map.png" usemap="#the-map-S" class="responsive-map" alt="Bản đồ Việt Nam" id="vietnam-map">
+        <map name="the-map-S">
+            <!-- Cao Bằng -->
+            <area shape="poly" data-coords="244,63,262,52,280,61,302,60,314,66,330,66,337,80,329,92,314,102,298,100,285,94,274,96,272,83" href="CaoBang.html" title="Đây là tỉnh Cao Bằng">
+            <!-- Bắc Ninh -->
+            <area shape="poly" data-coords="287,198,286,190,283,186,283,178,298,185,303,187,307,189,309,195,301,198" href="Bac-Ninh.html" title="Đây là tỉnh Bắc Ninh">
+            <!-- Hà Nội -->
+            <area shape="poly" data-coords="268,176,271,173,274,171,280,174,282,179,282,185,286,190,287,198,280,203,273,203,268,194,269,185,268,176" href="Ha-Noi.html" title="Đây là thủ đô Hà Nội">
+            <!-- Thái Bình -->
+            <area shape="poly" data-coords="294,225,299,233,303,244,309,241,313,244,323,247,326,238,323,233,326,227,317,225,316,218,306,218,301,222" href="Thai-Binh.html" title="Đây là tỉnh Thái Bình">
+            <!-- Nghệ An -->
+            <area shape="poly" data-coords="182,291,201,285,213,269,230,276,227,286,236,295,248,307,266,317,265,329,261,341,266,356,254,364,230,363,213,354,191,348,177,338,163,326,148,313,158,292,171,289" href="Nghe-An.html" title="Đây là tỉnh Nghệ An">
+            <!-- Quảng Trị -->
+            <area shape="poly" data-coords="349,466,347,472,339,475,336,483,327,484,320,482,322,503,327,508,330,518,338,518,342,516,350,527,355,526,356,520,360,518,357,511,371,508,374,500,376,496,364,484,359,480,360,474" href="Quang-Tri.html" title="Đây là tỉnh Quảng Trị">
+            <!-- Huế -->
+            <area shape="poly" data-coords="377,498,390,510,401,515,406,523,419,527,428,536,414,536,407,544,398,546,388,546,376,543,371,542,362,535,358,531,355,526,359,519,358,512" href="Hue.html" title="Đây là tỉnh Thừa Thiên Huế">
+            <!-- Đà Nẵng -->
+            <area shape="poly" data-coords="431,535,423,537,414,534,411,540,414,545,418,549,419,554,425,556,433,555,439,552,437,544,442,540,433,540" href="Da-Nang.html" title="Đây là thành phố Đà Nẵng">
+            <!-- Đà Lạt -->
+            <area shape="poly" data-coords="419,847,426,838,419,825,427,818,439,818,450,809,460,809,466,809,469,813,468,821,467,826,466,835,464,842,468,853,459,856,459,861,455,865,448,864,439,864,443,872,426,885,421,877,415,872,408,875,396,876,386,873,381,866,374,859,368,852,373,846,385,844,400,834,403,839,411,838" href="Da-Lat.html" title="Đây là thành phố Đà Lạt (tỉnh Lâm Đồng)">
+            <!-- Hồ Chí Minh -->
+            <area shape="poly" data-coords="306,902,312,895,314,890,329,906,330,912,335,911,338,911,341,914,340,916,335,917,336,921,343,924,350,927,351,934,347,938,349,943,342,943,342,938,341,942,335,939,335,936,328,926,323,927,314,920,317,908,314,904" href="HCM.html" title="Đây là thành phố Hồ Chí Minh">
+            <!-- Vũng Tàu -->
+            <area shape="poly" data-coords="356,947,360,939,356,937,352,937,351,926,355,926,363,920,368,918,374,921,379,917,382,917,386,920,389,928,391,933,383,938,375,940,369,945,364,944" href="Vung-Tau.html" title="Đây là tỉnh Bà Rịa - Vũng Tàu">
+            <!-- Phú Quốc -->
+            <area shape="poly" data-coords="126,941,132,941,137,935,144,941,146,947,141,960,142,967,137,963,136,953" href="Phu-Quoc.html" title="Đây là đảo Phú Quốc">
+        </map>
+    </div>
+
+    <div id="footer">
+        <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+        <df-messenger intent="WELCOME" chat-title="SKYCONNECTAIRLINES" agent-id="2f444177-ddba-49a8-8dc8-c3711c39c107" language-code="en"></df-messenger>
+
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Thông tin liên hệ</h3>
+                <p>Địa chỉ: Số 123, Đường ABC, Thành phố XYZ</p>
+                <p>Điện thoại: 0815078007</p>
+                <p>Email: nhathm.23it@vku.udn.vn</p>
+            </div>
+            <div class="footer-section">
+                <h3>Liên kết hữu ích</h3>
+                <ul>
+                    <li><a href="Hotro.html">FAQ</a></li>
+                    <li><a href="#">Chính sách bảo mật</a></li>
+                    <li><a href="#">Điều khoản và điều kiện</a></li>
+                    <li><a href="#">Trợ giúp</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Theo dõi chúng tôi</h3>
+                <ul class="social-links">
+                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Bản quyền © 2024. Bản quyền thuộc về công ty ABC.</p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const img = document.getElementById('vietnam-map');
+            const areas = document.querySelectorAll('area');
+            const originalWidth = img.naturalWidth; // Kích thước gốc của hình ảnh
+            const coordsData = {}; // Object to store original coordinates
+
+            areas.forEach(area => {
+                coordsData[area] = area.dataset.coords.split(',').map(Number);
+            });
+
+            function resizeMap() {
+                const currentWidth = img.clientWidth;
+                const scale = currentWidth / originalWidth;
+
+                areas.forEach(area => {
+                    const originalCoords = coordsData[area];
+                    const scaledCoords = originalCoords.map(coord => Math.round(coord * scale));
+                    area.coords = scaledCoords.join(',');
+                });
+            }
+
+            window.addEventListener('resize', resizeMap);
+            window.addEventListener('load', resizeMap);
+
+            resizeMap(); // Gọi hàm khi trang lần đầu tải
+        });
+    </script>
+</body>
+</html>

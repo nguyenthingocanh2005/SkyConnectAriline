@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Đặt Chỗ</title>
+    <!-- Thêm Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .form-container {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 500px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            font-size: 18px;
+            font-weight: bold;
+            border-bottom: 2px solid #ccc;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: orange;
+            color: black;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #e69500;
+        }
+        .info-text {
+            font-style: italic;
+            color: #666;
+            margin: 10px 0;
+        }
+        .icon-text {
+            margin: 10px 0;
+            font-size: 14px;
+        }
+        .icon-text i {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <form action="">
+            <table>
+                <tr>
+                    <th colspan="3">Mã đặt chỗ/Số vé đặt chỗ</th>
+                </tr>
+                <tr>
+                    <td colspan="2"><input type="text" placeholder="Mã đặt chỗ/Số vẽ điện tử"></td>
+                    <td><input type="text" id="Họ" placeholder="Họ"></td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <button type="button">TÌM KIẾM</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <p class="info-text"><i>Quý khách có thể xem thông tin và điều chỉnh các tùy chọn cho chuyến bay</i></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="icon-text">
+                        <i class="far fa-stopwatch"></i> Giữ giá tốt 
+                        <i class="fas fa-luggage-cart"></i> Thông tin hành lí 
+                        <i class="fas fa-chair"></i> Chỗ ngồi 
+                        <i class="fas fa-plus-circle"></i> Thêm dịch vụ
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>

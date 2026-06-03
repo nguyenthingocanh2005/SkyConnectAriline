@@ -1,0 +1,309 @@
+@charset "utf8";
+/*
+.px-5 {
+    height: 80px;
+}*/
+body {
+    background-size: cover;
+}
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+.logo {
+    width: 200px;
+    height: 100px;
+}
+
+.navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    transition: top 0.3s;
+    z-index: 1000;
+}
+
+#navbarSupportedContent a {
+    font-size: 20px;
+    color: #000080 !important;
+}
+
+#navbarSupportedContent a:hover {
+    background-color: #000080;
+    color: white !important;
+}
+
+#head {
+    width: 100%;
+    background-size: cover;
+    z-index: 1;
+    margin-top: 0;
+}
+#head img {
+    width: 100%;
+    height: 630px;
+}
+
+.fixed-background {
+    background-attachment: fixed;
+}
+
+.login {
+    margin-top: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 15px;
+}
+
+.login a {
+    color: #000080;
+    text-decoration: none;
+    margin-left: 15px;
+}
+.login a:hover {
+    text-decoration: underline;
+}
+
+.user-dropdown{
+    position:relative;
+}
+
+.user-info{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    cursor:pointer;
+    background:white;
+    padding:8px 14px;
+    border-radius:50px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.08);
+}
+
+.user-avatar{
+    width:38px;
+    height:38px;
+    border-radius:50%;
+    object-fit:cover;
+}
+
+.user-name{
+    font-weight:600;
+    color:#222;
+}
+
+.arrow{
+    font-size:12px;
+}
+
+.user-menu{
+    position:absolute;
+    top:60px;
+    right:0;
+    width:220px;
+    background:white;
+    border-radius:14px;
+    box-shadow:0 8px 25px rgba(0,0,0,0.12);
+    overflow:hidden;
+
+    opacity:0;
+    visibility:hidden;
+    transform:translateY(10px);
+
+    transition:0.25s;
+    z-index:999;
+}
+
+.show-menu{
+    opacity:1;
+    visibility:visible;
+    transform:translateY(0);
+}
+
+.user-menu a,
+.user-menu button{
+
+    width:100%;
+    border:none;
+    background:none;
+    text-align:left;
+
+    padding:14px 18px;
+
+    display:block;
+
+    color:#222;
+    text-decoration:none;
+
+    transition:0.2s;
+}
+
+.user-menu a:hover,
+.user-menu button:hover{
+
+    background:#f5f7fa;
+}
+
+#main {
+    margin: 40px;
+}
+
+#footer {
+    background-color: white;
+    color: black;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    flex: 1;
+    margin-bottom: 20px;
+}
+
+.footer-section h3 {
+    margin-bottom: 15px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px; 
+}
+
+.footer-section ul li a {
+    color: black; 
+    text-decoration: none;
+}
+
+/* Thiết lập giao diện cho máy tính xách tay (Laptop) */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    /* Thêm CSS cho máy tính xách tay */
+    /* Ví dụ */
+    .container {
+        width: 992px;
+        margin: 0 auto;
+    }
+}
+
+/* Thiết lập giao diện cho máy tính bảng (Tablet) */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    /* Thêm CSS cho máy tính bảng */
+    /* Ví dụ */
+    .container {
+        width: 100%;
+        padding: 0 20px;
+    }
+}
+
+/* Thiết lập giao diện cho điện thoại di động (Mobile) */
+@media only screen and (max-width: 767px) {
+    /* Thêm CSS cho điện thoại di động */
+    /* Ví dụ */
+    .container {
+        width: 100%;
+        padding: 0 10px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .formm {
+      position: relative;
+      top: 50px; /* Điều chỉnh khoảng cách từ đỉnh của màn hình xuống form */
+    }
+  }
+
+/*css chỉnh thời tiết của các địa điểm*/
+.weather-widget {
+    position: fixed;
+    bottom: 100px;
+    right: 20px;
+    z-index: 1000; /* Đảm bảo widget thời tiết hiển thị trên cùng */
+}
+
+
+    #weatherIcon {
+        width: 60px;
+        height: 60px;
+        cursor: pointer;
+        position: relative;
+        transition: transform 0.3s ease;
+    }
+
+    #weatherIcon:hover {
+        transform: scale(1.2);
+    }
+
+    #tooltip {
+        display: none;
+        position: absolute;
+        top: 50%;
+        right: 70px;
+        transform: translateY(-50%);
+        background-color: #000;
+        color: #fff;
+        padding: 5px 10px;
+        border-radius: 5px;
+        white-space: nowrap;
+    }
+
+    #weatherIcon:hover + #tooltip {
+        display: block;
+    }
+
+    #weatherModal {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 320px;
+        border: 1px solid #ccc;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        background-color: white;
+        border-radius: 5px;
+        z-index: 1001;
+        overflow: hidden;
+    }
+
+    #modalOverlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+    }
+
+    #closeModal {
+        background-color: #ff0000;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 14px;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        transition: background-color 0.3s ease;
+    }
+
+    #closeModal:hover {
+        background-color: #cc0000;
+    }
+
+    .visible {
+        display: block;
+    }

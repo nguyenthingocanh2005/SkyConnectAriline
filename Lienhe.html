@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liên hệ</title>
+       
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+    <link rel="icon" href="images/logo.png" type="image/x-icon">
+
+    <script language="javascript">
+        function kiemtra() {
+            var name = document.forms["lienhe"]["name"].value;
+            var email = document.forms["lienhe"]["email"].value;
+            var phone = document.forms["lienhe"]["phone"].value;
+            var message = document.forms["lienhe"]["message"].value;
+
+            if (name.length == 0) {
+                alert("Vui lòng cho chúng tôi biết tên của bạn");
+                document.forms["lienhe"]["name"].focus();
+                return false;
+            }
+
+            if (email.length == 0) {
+                alert("Vui lòng nhập địa chỉ email của bạn");
+                document.forms["lienhe"]["email"].focus();
+                return false;
+            }
+
+            if (phone.length == 0) {
+                alert("Vui lòng nhập số điện thoại của bạn");
+                document.forms["lienhe"]["phone"].focus();
+                return false;
+            }
+
+            if (message.length == 0) {
+                alert("Vui lòng nhập nội dung liên hệ");
+                document.forms["lienhe"]["message"].focus();
+                return false;
+            }
+
+            alert("Cảm ơn bạn đã liên hệ với chúng tôi!");
+            return false;
+        }
+    </script>
+
+    <style>
+
+body{
+    background:
+    linear-gradient(180deg,#f8fbff,#eef5ff);
+    font-family:'Poppins',sans-serif;
+    color:#1e293b;
+}
+
+/* HERO */
+
+#head{
+    height:550px !important;
+    background-size:cover;
+    background-position:center;
+    position:relative;
+}
+
+#head::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+    linear-gradient(
+        rgba(15,23,42,0.45),
+        rgba(15,23,42,0.55)
+    );
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    height:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    text-align:center;
+    color:white;
+}
+
+.hero-content h1{
+    font-size:58px;
+    font-weight:800;
+    margin-bottom:15px;
+}
+
+.hero-content p{
+    font-size:20px;
+    opacity:0.95;
+}
+
+/* SECTION */
+
+.contact-section{
+    margin-top:-80px;
+    position:relative;
+    z-index:5;
+}
+
+.contact-card{
+    background:white;
+    border-radius:30px;
+    padding:45px;
+    box-shadow:
+    0 20px 50px rgba(15,23,42,0.08);
+}
+
+/* INFO BOX */
+
+.info-box{
+    background:
+    linear-gradient(135deg,#eff6ff,#ffffff);
+    border-radius:25px;
+    padding:35px;
+    height:100%;
+    border:1px solid #e2e8f0;
+}
+
+.info-item{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    margin-bottom:25px;
+}
+
+.info-icon{
+    width:60px;
+    height:60px;
+    border-radius:18px;
+    background:#2563eb;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:24px;
+}
+
+.info-text h5{
+    margin:0;
+    font-weight:700;
+}
+
+.info-text p{
+    margin:0;
+    color:#64748b;
+}
+
+/* IMAGE */
+
+.contact-image{
+    width:100%;
+    border-radius:24px;
+    margin-top:20px;
+    box-shadow:
+    0 15px 40px rgba(0,0,0,0.12);
+}
+
+/* FORM */
+
+.form-card{
+    background:white;
+    border-radius:25px;
+    padding:35px;
+    border:1px solid #e2e8f0;
+}
+
+.form-control{
+    border-radius:16px !important;
+    border:1px solid #dbeafe;
+    min-height:58px;
+    box-shadow:none !important;
+}
+
+.form-control:focus{
+    border-color:#2563eb;
+}
+
+textarea.form-control{
+    min-height:150px;
+}
+
+.btn-send{
+    background:
+    linear-gradient(
+        135deg,
+        #2563eb,
+        #3b82f6
+    );
+    border:none;
+    color:white;
+    font-size:18px;
+    font-weight:600;
+    padding:16px;
+    border-radius:18px;
+    transition:0.3s;
+}
+
+.btn-send:hover{
+    transform:translateY(-3px);
+}
+
+/* MAP */
+
+.map-section{
+    margin-top:60px;
+}
+
+.map-card{
+    background:white;
+    border-radius:30px;
+    overflow:hidden;
+    padding:30px;
+    box-shadow:
+    0 20px 50px rgba(15,23,42,0.08);
+}
+
+.map-image{
+    width:100%;
+    border-radius:20px;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    .hero-content h1{
+        font-size:38px;
+    }
+
+    .contact-card{
+        padding:25px;
+    }
+}
+
+</style>
+
+</head>
+<body style="background-image: url('images/bg.jpg');">
+    <div id="header"></div>
+
+    <div id="head" style="background-image:url('images/lienhe.jpg');">
+    <div class="hero-content">
+        <h1>Liên hệ với SCA</h1>
+        <p>Chúng tôi luôn sẵn sàng hỗ trợ bạn mọi lúc</p>
+    </div>
+</div>
+
+    <div id="main" class="container contact-section">
+
+    <div class="contact-card">
+
+        <div class="row g-5">
+
+            <!-- LEFT -->
+            <div class="col-lg-5">
+
+                <div class="info-box">
+
+                    <h2 class="fw-bold mb-4">
+                        Thông tin liên hệ
+                    </h2>
+
+                    <div class="info-item">
+
+                        <div class="info-icon">
+                            <i class="fa fa-phone"></i>
+                        </div>
+
+                        <div class="info-text">
+                            <h5>Điện thoại</h5>
+                            <p>0815 078 007</p>
+                        </div>
+
+                    </div>
+
+                    <div class="info-item">
+
+                        <div class="info-icon">
+                            <i class="fa fa-envelope"></i>
+                        </div>
+
+                        <div class="info-text">
+                            <h5>Email</h5>
+                            <p>nhathm.23it@vku.udn.vn</p>
+                        </div>
+
+                    </div>
+
+                    <div class="info-item">
+
+                        <div class="info-icon">
+                            <i class="fa fa-map-marker"></i>
+                        </div>
+
+                        <div class="info-text">
+                            <h5>Địa chỉ</h5>
+                            <p>Sky Connected Airline, Việt Nam</p>
+                        </div>
+
+                    </div>
+
+                    <img
+                        src="images/maybay-lienhe.jpg"
+                        class="contact-image"
+                    >
+
+                </div>
+
+            </div>
+
+            <!-- RIGHT -->
+            <div class="col-lg-7">
+
+                <div class="form-card">
+
+                    <h2 class="fw-bold mb-4">
+                        Gửi liên hệ
+                    </h2>
+
+                    <form
+                        name="lienhe"
+                        method="post"
+                        onsubmit="return kiemtra()"
+                    >
+
+                        <div class="mb-3">
+                            <input
+                                type="text"
+                                class="form-control"
+                                name="name"
+                                placeholder="Tên của bạn"
+                            >
+                        </div>
+
+                        <div class="mb-3">
+                            <input
+                                type="email"
+                                class="form-control"
+                                name="email"
+                                placeholder="Email"
+                            >
+                        </div>
+
+                        <div class="mb-3">
+                            <input
+                                type="tel"
+                                class="form-control"
+                                name="phone"
+                                placeholder="Số điện thoại"
+                            >
+                        </div>
+
+                        <div class="mb-4">
+                            <textarea
+                                class="form-control"
+                                name="message"
+                                placeholder="Nội dung liên hệ..."
+                            ></textarea>
+                        </div>
+
+                        <button
+                            class="btn-send w-100"
+                            type="submit"
+                        >
+                            ✈️ Gửi liên hệ
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- MAP -->
+    <div class="map-section">
+
+        <div class="map-card">
+
+            <h2 class="fw-bold mb-4 text-center">
+                🌍 Bản đồ điểm đến
+            </h2>
+
+            <div>
+        <map name="the-map-S">
+            <!-- Cao Bằng -->
+            <area shape="poly" coords="244,63,262,52,280,61,302,60,314,66,330,66,337,80,329,92,314,102,298,100,285,94,274,96,272,83" href="/Best Web Design(K23WD)/CaoBang.html" title="Đây là tỉnh Cao Bằng">
+            <!-- Nghệ An -->
+            <area shape="poly" coords="182,291,201,285,213,269,230,276,227,286,236,295,248,307,266,317,265,329,261,341,266,356,254,364,230,363,213,354,191,348,177,338,163,326,148,313,158,292,171,289" href="/Best Web Design (K23WD)/NgheAn.html" title="Đây là tỉnh Nghệ An">
+            <!-- Đà Nẵng -->
+            <area shape="poly" coords="431,535,423,537,414,534,411,540,414,545,418,549,419,554,425,556,433,555,439,552,437,544,442,540,433,540" href="Da-Nang.html" title="Đây là thành phố Đà Nẵng">
+            <!-- Huế -->
+            <area shape="poly" coords="377,498,390,510,401,515,406,523,419,527,428,536,414,536,407,544,398,546,388,546,376,543,371,542,362,535,358,531,355,526,359,519,358,512" href="Hue.html" title="Đây là tỉnh Thừa Thiên Huế">
+            <!-- Đà Lạt -->
+            <area shape="poly" coords="419,847,426,838,419,825,427,818,439,818,450,809,460,809,466,809,469,813,468,821,467,826,466,835,464,842,468,853,459,856,459,861,455,865,448,864,439,864,443,872,426,885,421,877,415,872,408,875,396,876,386,873,381,866,374,859,368,852,373,846,385,844,400,834,403,839,411,838" href="Da-Lat.html" title="Đây là thành phố Đà Lạt (tỉnh Lâm Đồng)">
+
+        </map>
+        <img src="images/map.png" usemap="#the-map-S">
+    </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+    <div id="footer"></div>
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+
+    <script type="module" src="js/auth.js"></script>
+    <script src="js/navbar.js"></script>
+</body>
+</html>

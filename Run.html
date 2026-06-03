@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanh Tiến Trình</title>
+    <link rel="icon" href="images/logo.png" type="image/x-icon">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: lightblue;
+        }
+        .progress-container {
+            position: relative;
+            width:500px;
+            background-color: #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 10px; /* Đảm bảo chiều cao nhất quán */
+        }
+        .progress-bar {
+            width: 0;
+            height: 100%; /* Chiều cao của progress-bar bằng chiều cao của container */
+            background-color: #4caf50;
+        }
+        .progress-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 10px;
+            color: black;
+        }
+        .logo {
+            position: absolute;
+            top: -35px; /* Đặt hình ảnh ở trên thanh tiến trình */
+            height: 30px; /* Đảm bảo chiều cao của hình ảnh bằng chiều cao của thanh tiến trình */
+            width: 30px; /* Đảm bảo chiều rộng của hình ảnh phù hợp */
+            transition: left 0.1s linear; /* Thêm hiệu ứng chuyển động mượt mà */
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-container">
+        <img src="images/logo.png" alt="Logo" class="logo" id="logo">
+        <div class="progress-bar" id="progressBar"></div>
+        <div class="progress-text" id="progressText">0%</div>
+    </div>
+
+    <script>
+        let progress = 0;
+        let progressBar = document.getElementById('progressBar');
+        let progressText = document.getElementById('progressText');
+        let logo = document.getElementById('logo');
+
+        function updateProgress() {
+            if (progress < 100) {
+                progress++;
+                progressBar.style.width = progress + '%';
+                progressText.textContent = progress + '%';
+                logo.style.left = `calc(${progress}% - 15px)`; // Di chuyển hình ảnh theo thanh tiến trình, trừ đi nửa chiều rộng hình ảnh
+                setTimeout(updateProgress, 100); // Tăng giá trị mỗi 100ms
+            }
+            else {
+                // Chuyển hướng đến trang web chính sau khi hoàn tất
+                window.location.href = 'home.html'; // Thay thế bằng URL của trang chính
+            }
+        }
+
+        window.onload = updateProgress;
+    </script>
+</body>
+</html>
