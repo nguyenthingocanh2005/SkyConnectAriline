@@ -1,3 +1,5 @@
+console.log(window.location.href);
+console.log("header url =", new URL("header.html", window.location.href).href);
 document.addEventListener("DOMContentLoaded", function () {
 
     fetch("header.html")
